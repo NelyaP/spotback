@@ -70,7 +70,7 @@ DATABASES = {
         'USER': os.environ['DB_USER'], 
         'PASSWORD': os.environ['DB_PASSWORD'], 
         'HOST': os.environ['DB_HOST'], 
-        'PORT': os.environ['DB_PORT'], 
+        'PORT': os.environ['DB_PORT'],
 
         # debug MODE
         #'NAME': 'spotapp',
@@ -123,8 +123,10 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = [
+# CORS Config
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = False
+"""CORS_ORIGIN_WHITELIST = [
     "http://localhost:8080",
     "http://localhost:8090",
-]
+]"""
