@@ -26,12 +26,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'store',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -64,18 +66,18 @@ WSGI_APPLICATION = 'spotonproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        #'NAME': os.environ['DB_NAME'], 
-        #'USER': os.environ['DB_USER'], 
-        #'PASSWORD': os.environ['DB_PASSWORD'], 
-        #'HOST': os.environ['DB_HOST'], 
-        #'PORT': os.environ['DB_PORT'], 
+        'NAME': os.environ['DB_NAME'], 
+        'USER': os.environ['DB_USER'], 
+        'PASSWORD': os.environ['DB_PASSWORD'], 
+        'HOST': os.environ['DB_HOST'], 
+        'PORT': os.environ['DB_PORT'], 
 
         # debug MODE
-        'NAME': 'spotapp',
-        'USER': 'nelya',
-        'PASSWORD': 'pwd0123456789',
-        'HOST': 'localhost',
-        'PORT': '5435'
+        #'NAME': 'spotapp',
+        #'USER': 'nelya',
+        #'PASSWORD': 'pwd0123456789',
+        #'HOST': 'localhost',
+        #'PORT': '5435'
     }
 }
 
@@ -120,3 +122,7 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:8080",
+]
