@@ -64,11 +64,18 @@ WSGI_APPLICATION = 'spotonproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['DB_NAME'], #'spotapp',
-        'USER': os.environ['DB_USER'], #''nelya',
-        'PASSWORD': os.environ['DB_PASSWORD'], #''pwd0123456789',
-        'HOST': os.environ['DB_HOST'], #''localhost',
-        'PORT': os.environ['DB_PORT'], #''5435'
+        #'NAME': os.environ['DB_NAME'], 
+        #'USER': os.environ['DB_USER'], 
+        #'PASSWORD': os.environ['DB_PASSWORD'], 
+        #'HOST': os.environ['DB_HOST'], 
+        #'PORT': os.environ['DB_PORT'], 
+
+        # debug MODE
+        'NAME': 'spotapp',
+        'USER': 'nelya',
+        'PASSWORD': 'pwd0123456789',
+        'HOST': 'localhost',
+        'PORT': '5435'
     }
 }
 
